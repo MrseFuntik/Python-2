@@ -9,11 +9,15 @@ git clone https://github.com/MrseFuntik/python_hw4
 
 Затем переходим в директорию репозитория
 
-```cd python_hw4```
+```
+cd python_hw4
+```
 
 Далее создаём Docker-образ с помощью команды:
 
-```docker build -t hw .```
+```
+docker build -t hw .
+```
 
 Образ будет создаваться достаточно долго из-за необходимости установки всех зависимостей torch, в результате получится около 9 Гб. После создания образа, необходимо запустить контейнер. Для этого нам нужно посмотреть id образа. Через Docker Desktop сделать это можно так:
 ![image](https://github.com/MrseFuntik/python_hw4/assets/136927535/f3993633-2eb3-4347-b15c-5b5ec2e95eaf)
@@ -21,7 +25,9 @@ git clone https://github.com/MrseFuntik/python_hw4
 
 Либо через командную строку:
 
-```docker images --no-trunc```
+```
+docker images --no-trunc
+```
 
 Должно получится что-то вроде:
 ![image](https://github.com/MrseFuntik/python_hw4/assets/136927535/a2fa7ce2-389c-484b-bb8c-caff55f3f4e4)
