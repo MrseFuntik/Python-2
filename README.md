@@ -1,2 +1,4 @@
 # Python-FastAPI-Docker-
-This repository is a homework assignment for the Applied Python course
+Репозиторий представляет собой выполненное домашнее задание по курсу "Прикладной Python".
+# Инструкция к Docker
+<sub> 1234 </sub>
