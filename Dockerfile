@@ -6,7 +6,7 @@ COPY ./last.pt /fastapi_app
 
 COPY ./main.py /fastapi_app
 
-COPY ./requirements.txt .
+COPY ./requirements.txt /fastapi_app.
 
 WORKDIR /fastapi_app
 
