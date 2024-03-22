@@ -6,11 +6,11 @@ COPY ./last.pt /fastapi_app
 
 COPY ./main.py /fastapi_app
 
-COPY ./requirements.txt /fastapi_app.
+COPY ./requirements.txt /fastapi_app
 
 WORKDIR /fastapi_app
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt /fastapi_app
 
 # RUN mkdir -p /fastapi_app/main.py
 
