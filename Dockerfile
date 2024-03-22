@@ -4,9 +4,9 @@ RUN mkdir /fastapi_app
 
 WORKDIR /fastapi_app
 
-COPY last.pt
+COPY last.pt .
 
-COPY main.py
+COPY main.py .
 
 COPY requirements.txt .
 
