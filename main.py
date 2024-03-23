@@ -83,8 +83,11 @@ async def create_upload_file(file: UploadFile = File(...)):
     except Exception:
         raise HTTPException(status_code=500, detail='File must be an image (.png or .jpg)')
     results = model(im)
-    results.save()
-    return FileResponse("runs\detect\exp\image0.jpg")
+    img = results.render()
+    img = Image.fromarray(img[0], 'RGB')
+    img.save('my.png')
+    path = Path("my.png")
+    return FileResponse(path)
 
 
 # if __name__ == "__main__":
