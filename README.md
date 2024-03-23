@@ -1,4 +1,4 @@
-# Python-FastAPI-Docker-
+# Python-FastAPI-Docker
 Репозиторий представляет собой выполненное домашнее задание по курсу "Прикладной Python".
 # Инструкция к Docker
 Сначала клонируем репозиторий с Dockerfile
