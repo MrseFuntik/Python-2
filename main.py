@@ -48,7 +48,7 @@ def help_func():
            f"обычныеPOST: /"
 
 
-@app.get('/last/')  # получить информацию о последнем загруженном изображении
+@app.get('/last')  # получить информацию о последнем загруженном изображении
 async def get_last_image():
     if model_class.last_im is None:
         return "Вы пока не загрузили ни одного изображения. Доступные команды смотрите по /help"
@@ -56,7 +56,7 @@ async def get_last_image():
         return {'filename': model_class.last_im_name, 'size': model_class.last_im.size}
 
 
-@app.post("/mode/")
+@app.post("/mode")
 async def change_mode(mode: str) -> str:
     if mode == 'gray' or mode == 'Gray':
         model_class.mode = 'L'
@@ -68,7 +68,7 @@ async def change_mode(mode: str) -> str:
         return HTTPException(status_code=400, detail='BAD REQUEST. Возможные параметры запроса: {gray} или {default}')
 
 
-@app.post("/uploadfile/")
+@app.post("/uploadfile")
 async def create_upload_file(file: UploadFile = File(...)):
     try:
         shutil.rmtree("runs\detect\exp")  # после отправки удаляю фолдер, чтобы не засорять папку
@@ -78,9 +78,7 @@ async def create_upload_file(file: UploadFile = File(...)):
         im = Image.open(file.file)  # проверяем является ли файл изображением
         model_class.last_im_name = file.filename
         model_class.last_im = im
-        if model_class.mode == 'Default':
-            pass
-        elif model_class.mode == 'L':  # перекрашиваем в черно-белый если юзер менял мод работы
+        if model_class.mode == 'L':  # перекрашиваем в черно-белый если юзер менял мод работы
             im = im.convert("L")
     except Exception:
         raise HTTPException(status_code=500, detail='File must be an image (.png or .jpg)')
