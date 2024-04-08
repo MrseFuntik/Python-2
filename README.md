@@ -2,7 +2,7 @@
 Репозиторий представляет собой выполненное домашнее задание по курсу "Прикладной Python".
 # Инструкция к Docker
 Сначала клонируем репозиторий с Dockerfile
-![](https://github.com/MrseFuntik/python_hw4/blob/main/Ex/Example-usage%20(check%20&%20help%20&%20last).gif)
+
 ```
 git clone https://github.com/MrseFuntik/python_hw4
 ```
